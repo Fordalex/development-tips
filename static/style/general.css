@@ -7,12 +7,20 @@ h6 {
     font-family: 'Do Hyeon', sans-serif;
 }
 
-h1 {
-    font-size: 50px;
-}
-
 p {
     font-family: 'Comic Neue', cursive;
+}
+
+p:hover {
+    color: black;
+}
+
+a {
+    color: gray;
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 .big-text {
@@ -20,7 +28,52 @@ p {
 }
 
 
+/* title */
+
+.title-container {
+    border-bottom: solid rgb(186, 186, 186) 1px;
+    background-color: rgb(248, 248, 252);
+}
+
+
 /* Navigation Bar */
+
+
+/* link container */
+
+.tip-link-container {
+    border: solid rgb(186, 186, 186) 1px;
+    border-radius: 3px;
+    padding: 8px;
+    background: -webkit-linear-gradient(rgb(250, 255, 255), rgb(250, 252, 255), rgb(251, 251, 255));
+    box-shadow: 0 3px 4px 0 rgba(98, 152, 167, 0.07), 0 12px 20px 0 rgba(25, 62, 72, 0.06);
+}
+
+.tip-link-container h5 {
+    color: rgb(62, 62, 62);
+}
+
+.result-container-preview {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    box-shadow: 0 3px 4px 0 rgba(98, 152, 167, 0.09), 0 17px 40px 0 rgba(25, 62, 72, 0.09);
+    padding: 8px;
+}
+
+.text-small {
+    font-size: 10px;
+}
+
+.link-button {
+    background-color: rgb(73, 116, 179);
+    border: solid 1px rgb(7, 33, 71);
+    border-radius: 4px;
+    color: white;
+    padding: 4px 10px;
+}
 
 
 /* Colours */
@@ -97,6 +150,9 @@ p {
 
 /* results */
 
+
+/* animate a gradient */
+
 .animate-a-gradient-result {
     font-size: 70px;
     background: -webkit-linear-gradient(#6dc1be, #aad643, #2ed16f);
@@ -115,3 +171,6 @@ p {
         background-position: 0% 100%;
     }
 }
+
+
+/*  */

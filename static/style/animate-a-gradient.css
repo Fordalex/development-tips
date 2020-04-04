@@ -1,3 +1,8 @@
+h1 {
+    font-size: 50px;
+}
+
+
 /* Page */
 
 .page-container {
@@ -86,4 +91,35 @@ footer {
     position: absolute;
     width: 94%;
     bottom: 10px;
+}
+
+
+/* media query */
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 25px;
+    }
+    h3 {
+        font-size: 0.875rem;
+    }
+    .page-container {
+        margin-top: 12.5px;
+        padding: 5px;
+        padding-left: 7.5px;
+        padding-right: 7.5px;
+        width: 250px;
+        height: 250px;
+    }
+    .language-lession {
+        bottom: 4px;
+        left: 40px;
+    }
+    .result-container {
+        padding: 5.5px;
+        width: 94%;
+        height: 105px;
+        bottom: 35px;
+        border-radius: 2.5px;
+    }
 }
