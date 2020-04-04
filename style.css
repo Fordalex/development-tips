@@ -1,0 +1,179 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+p {
+    font-family: 'Comic Neue', cursive;
+}
+
+
+/* Colours */
+
+.main-colour {
+    color: rgb(90, 140, 189)
+}
+
+.text-secondary {
+    color: rgb(197, 210, 243);
+}
+
+
+/* code style */
+
+.code-font {
+    font-family: 'Source Code Pro', monospace;
+    margin-bottom: 1px;
+}
+
+
+/* html */
+
+.code-tag {
+    color: rgb(119, 156, 220);
+}
+
+.code-attribute {
+    color: rgb(107, 220, 209);
+}
+
+.code-value {
+    color: rgb(226, 220, 128);
+}
+
+
+/* css */
+
+.code-target {
+    color: rgb(225, 180, 85);
+}
+
+.code-property {
+    color: rgb(119, 181, 220);
+}
+
+.code-css-value {
+    color: rgb(223, 133, 65);
+}
+
+.code-keyframes {
+    color: rgb(214, 122, 235);
+}
+
+
+/* carosel style */
+
+.fa-arrow-left {
+    font-size: 28px;
+}
+
+.fa-arrow-right {
+    font-size: 28px;
+}
+
+.carousel-indicators {
+    bottom: -50px;
+}
+
+.carousel-indicators li {
+    background-color: rgb(193, 204, 211);
+}
+
+
+/* Page */
+
+.page-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    position: relative;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 500px;
+    height: 500px;
+    background-color: rgb(255, 255, 255);
+    border: solid black 1px;
+}
+
+.language-lession {
+    text-align: center;
+    position: relative;
+    bottom: 8px;
+    left: 80px;
+}
+
+.top-border {
+    border-top: solid rgb(182, 182, 182) 1px;
+}
+
+
+/* title page */
+
+.result-container {
+    padding: 11px;
+    width: 94%;
+    height: 210px;
+    position: absolute;
+    bottom: 70px;
+    border: solid white 1px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px 0 rgba(98, 152, 167, 0.12), 0 11px 40px 0 rgba(25, 62, 72, 0.09);
+}
+
+.result-wrapper {
+    height: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* The result */
+
+.result {
+    font-size: 110px;
+    background: -webkit-linear-gradient(#6dc1be, #aad643, #2ed16f);
+    background-position: 0% 0%;
+    background-size: 100% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animation 5s ease-in-out infinite alternate;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+
+/* how to */
+
+.result-container-code {
+    font-family: 'Source Code Pro', monospace;
+    padding: 11px;
+    border: solid white 1px;
+    background-color: black;
+    border-radius: 5px;
+    font-size: 10px;
+    color: white;
+    box-shadow: 0 1px 3px 0 rgba(98, 152, 167, 0.12), 0 11px 40px 0 rgba(25, 62, 72, 0.09);
+}
+
+footer {
+    position: absolute;
+    width: 94%;
+    bottom: 10px;
+}

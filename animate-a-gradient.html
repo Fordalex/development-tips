@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Animate A Gradient</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Do+Hyeon&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d4ed0579d0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="page-container">
+                    <div class="row m-0 p-0">
+                        <div class="col-12 m-0 p-0 d-flex align-items-center">
+                            <img src="images/last-logo-sm.png" class="float-left" style="width:14%;">
+                            <h1 class="m-0 p-0 ml-4">Development Tips</h1>
+                        </div>
+                        <div class="col-12 m-0 p-0">
+                            <h5 class="m-0 language-lession main-colour">HTML / CSS</h5>
+                        </div>
+                        <div class="col-12 top-border"></div>
+                        <div class="col-12 m-0 p-0">
+                            <h3 class="mt-3">Animate A Gradient</h3>
+                        </div>
+                        <div class="col-12 m-0 p-0">
+                            <p class="text-secondary">Create a simple text gradient animation.</p>
+                        </div>
+                        <div class="col-12 m-0 p-0">
+                            <h6 class="m-0 p-0">Result:</h6>
+                        </div>
+                    </div>
+                    <div class="result-container">
+                        <div class="result-wrapper">
+                            <h1 class="result m-0">Title</h1>
+                        </div>
+                    </div>
+
+                    <footer>
+                        <div class="row m-0 p-0">
+                            <div class="col-12 m-0 p-0 d-flex justify-content-between">
+                                <p class="m-0 p-0">fordsdevelopment@gmail.com</p>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <i class="fab fa-github mr-1"></i>
+                                    <p class="m-0 p-0">github.com/Fordalex</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-0 p-0">
+                            <div class="col-12 d-flex justify-content-between m-0 p-0">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <i class="fab fa-instagram mr-1 main-colour"></i>
+                                    <p class="m-0 p-0">fordsdevelopment</p>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <i class="fab fa-facebook-square mr-1 main-colour"></i>
+                                    <p class="m-0 p-0">Fords development</p>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <i class="fab fa-twitter-square mr-1 main-colour"></i>
+                                    <p class="m-0 p-0">fordsdevelopment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+            <div class="carousel-item">
+
+                <div class="page-container">
+                    <div class="row m-0 p-0">
+                        <div class="col-12 m-0 p-0 mb-3 mt-1">
+                            <div class="row m-0 p-0">
+                                <div class="col-2 m-0 p-0">
+                                    <img src="images/last-logo-sm.png" class="float-left" style="width:70%;">
+                                </div>
+                                <div class="col-10 m-0 p-0 d-flex justify-content-center">
+                                    <h3 class="m-0 p-0">Animate A Gradient</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 top-border"></div>
+                    </div>
+
+                    <div class="row m-0 p-0 my-3">
+                        <div class="col-12 m-0 p-0">
+                            <p class="m-0">First add the <b>h1</b> element to your <b>HTML</b> page and give it a <b>class</b> attribute. Target the class in <b>CSS</b> and give the following properties.</p>
+                        </div>
+                    </div>
+
+                    <div class="row m-0 p-0">
+                        <div class="col-12 m-0 p-0 mb-3">
+                            <h6>HTML:</h6>
+                            <div class="result-container-code">
+                                <p class="code-font m-0 p-0"><span class="text-secondary">&lt;</span><span class="code-tag">h1</span> <span class="code-attribute">class</span>=<span class="code-value">"gradient-title"</span><span class="text-secondary">&gt;</span> Title
+                                    <span class="text-secondary">&lt;</span><span class="code-tag">/h1</span><span class="text-secondary">&gt;</span></p>
+                            </div>
+                        </div>
+                        <div class="col-12 m-0 p-0">
+                            <h6>CSS:</h6>
+                            <div class="result-container-code">
+                                <p class="code-font"><span class="code-target">.gradient-title</span> {</p>
+                                <p class="code-font">&emsp;&emsp;<span class="code-property">font-size:</span> <span class="code-value">110px</span>;</p>
+                                <p class="code-font">&emsp;&emsp;<span class="code-property">background:</span> <span class="code-value">linear-gradient(<span class="code-css-value">#6dc1be</span>, <span class="code-css-value">#a0d12e</span>, <span class="code-css-value">#2ed16f</span>)</span>;</p>
+                                <p class="code-font">&emsp;&emsp;<span class="code-property">background-position:</span><span class="code-value"> 0% 0%</span>;</p>
+                                <p class="code-font">&emsp;&emsp;<span class="code-property">background-size:</span><span class="code-value"> 100% 500%</span>;</p>
+                                <p class="code-font">&emsp;&emsp;<span class="code-property">-webkit-text-fill-color:</span><span class="code-value"> transparent</span>;</p>
+                                <p class="code-font">&emsp;&emsp;<span class="code-property">-webkit-background-clip:</span><span class="code-value"> text</span>;</p>
+                                <p class="code-font">&emsp;&emsp;<span class="code-property">animation:</span> gradient-animation <span class="code-value">5s</span> <span class="code-css-value">ease-in-out infinite alternate</span>;</p>
+                                <p class="code-font m-0">}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer>
+                        <div class="row m-0 p-0">
+                            <div class="col-12 m-0 p-0 d-flex justify-content-between">
+                                <p class="m-0 p-0">fordsdevelopment@gmail.com</p>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <i class="fab fa-github mr-1"></i>
+                                    <p class="m-0 p-0">github.com/Fordalex</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-0 p-0">
+                            <div class="col-12 d-flex justify-content-between m-0 p-0">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <i class="fab fa-instagram mr-1 main-colour"></i>
+                                    <p class="m-0 p-0">fordsdevelopment</p>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <i class="fab fa-facebook-square mr-1 main-colour"></i>
+                                    <p class="m-0 p-0">Fords development</p>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <i class="fab fa-twitter-square mr-1 main-colour"></i>
+                                    <p class="m-0 p-0">fordsdevelopment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+
+            </div>
+            <div class="carousel-item">
+                <div class="page-container">
+                    <div class="row m-0 p-0">
+                        <div class="col-12 m-0 p-0 mb-3 mt-1">
+                            <div class="row m-0 p-0">
+                                <div class="col-2 m-0 p-0">
+                                    <img src="images/last-logo-sm.png" class="float-left" style="width:70%;">
+                                </div>
+                                <div class="col-10 m-0 p-0 d-flex justify-content-center">
+                                    <h3 class="m-0 p-0">Animate A Gradient</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 top-border"></div>
+                    </div>
+
+                    <div class="row m-0 p-0 my-3">
+                        <div class="col-12 m-0 p-0">
+                            <p class="m-0">Finally add the keyframes animation and we're done!</p>
+                        </div>
+                    </div>
+
+                    <div class="row m-0 p-0">
+                        <div class="col-12 m-0 p-0">
+                            <h6>CSS:</h6>
+                            <div class="result-container-code">
+                                <p class="code-font"><span class="code-target">@keyframes</span> <span class="code-keyframes">gradient-animation</span> {</p>
+                                <p class="code-font">&emsp;&emsp;0% {</p>
+                                <p class="code-font">&emsp;&emsp;&emsp;&emsp;<span class="code-property">background-position: <span class="code-value">0% 0%</span>;</p>
+                                <p class="code-font m-0">&emsp;&emsp;}</p>
+                                <p class="code-font">&emsp;&emsp;100% {</p>
+                                <p class="code-font">&emsp;&emsp;&emsp;&emsp;<span class="code-property">background-position: <span class="code-value">0% 100%</span>;</p>
+                                <p class="code-font m-0">&emsp;&emsp;}</p>
+                                <p class="code-font m-0">}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer>
+                        <div class="row m-0 p-0">
+                            <div class="col-12 m-0 p-0 d-flex justify-content-between">
+                                <p class="m-0 p-0">fordsdevelopment@gmail.com</p>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <i class="fab fa-github mr-1"></i>
+                                    <p class="m-0 p-0">github.com/Fordalex</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-0 p-0">
+                            <div class="col-12 d-flex justify-content-between m-0 p-0">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <i class="fab fa-instagram mr-1 main-colour"></i>
+                                    <p class="m-0 p-0">fordsdevelopment</p>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <i class="fab fa-facebook-square mr-1 main-colour"></i>
+                                    <p class="m-0 p-0">Fords development</p>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <i class="fab fa-twitter-square mr-1 main-colour"></i>
+                                    <p class="m-0 p-0">fordsdevelopment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+            <div class="carousel-item">
+
+                <div class="page-container">
+                    <div class="row m-0 p-0">
+                        <div class="col-12 m-0 p-0 d-flex align-items-center">
+                            <img src="images/last-logo-sm.png" class="float-left" style="width:14%;">
+                            <h1 class="m-0 p-0 ml-4">Development Tips</h1>
+                        </div>
+                        <div class="col-12 top-border"></div>
+                        <div class="col-12 m-0 p-0">
+                            <h3 class="mt-3">Hope This Helped Someone</h3>
+                        </div>
+                        <div class="col-12 m-0 p-0">
+                            <p class="text-secondary">Please message me if you have any questions about this tip <b>or</b> requests for future posts.</p>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-0">
+                        <div class="col-12 m-0 p-0">
+                            <p class="m-0 text-secondary">All the current tips can be found on <a href="#">linklinklink</a> or the link can be found in my bio.</p>
+                        </div>
+                    </div>
+
+                    <footer>
+                        <div class="row m-0 p-0">
+                            <div class="col-12 m-0 p-0 d-flex justify-content-between">
+                                <p class="m-0 p-0">fordsdevelopment@gmail.com</p>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <i class="fab fa-github mr-1"></i>
+                                    <p class="m-0 p-0">github.com/Fordalex</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-0 p-0">
+                            <div class="col-12 d-flex justify-content-between m-0 p-0">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <i class="fab fa-instagram mr-1 main-colour"></i>
+                                    <p class="m-0 p-0">fordsdevelopment</p>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <i class="fab fa-facebook-square mr-1 main-colour"></i>
+                                    <p class="m-0 p-0">Fords development</p>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <i class="fab fa-twitter-square mr-1 main-colour"></i>
+                                    <p class="m-0 p-0">fordsdevelopment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-arrow-left text-dark"></i></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-arrow-right text-dark"></i></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="javascript.js"></script>
+</body>
+
+</html>
