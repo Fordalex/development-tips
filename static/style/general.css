@@ -15,10 +15,12 @@ p {
     font-family: 'Comic Neue', cursive;
 }
 
+.big-text {
+    font-size: 18px;
+}
+
 
 /* Navigation Bar */
-
-nav {}
 
 
 /* Colours */
