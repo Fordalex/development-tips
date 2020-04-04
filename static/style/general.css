@@ -16,6 +16,11 @@ p {
 }
 
 
+/* Navigation Bar */
+
+nav {}
+
+
 /* Colours */
 
 .main-colour {
@@ -88,59 +93,10 @@ p {
 }
 
 
-/* Page */
+/* results */
 
-.page-container {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 25px;
-    position: relative;
-    padding: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 500px;
-    height: 500px;
-    background-color: rgb(255, 255, 255);
-    border: solid black 1px;
-}
-
-.language-lession {
-    text-align: center;
-    position: relative;
-    bottom: 8px;
-    left: 80px;
-}
-
-.top-border {
-    border-top: solid rgb(182, 182, 182) 1px;
-}
-
-
-/* title page */
-
-.result-container {
-    padding: 11px;
-    width: 94%;
-    height: 210px;
-    position: absolute;
-    bottom: 70px;
-    border: solid white 1px;
-    border-radius: 5px;
-    box-shadow: 0 1px 3px 0 rgba(98, 152, 167, 0.12), 0 11px 40px 0 rgba(25, 62, 72, 0.09);
-}
-
-.result-wrapper {
-    height: 98%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-/* The result */
-
-.result {
-    font-size: 110px;
+.animate-a-gradient-result {
+    font-size: 70px;
     background: -webkit-linear-gradient(#6dc1be, #aad643, #2ed16f);
     background-position: 0% 0%;
     background-size: 100% 500%;
@@ -156,24 +112,4 @@ p {
     100% {
         background-position: 0% 100%;
     }
-}
-
-
-/* how to */
-
-.result-container-code {
-    font-family: 'Source Code Pro', monospace;
-    padding: 11px;
-    border: solid white 1px;
-    background-color: black;
-    border-radius: 5px;
-    font-size: 10px;
-    color: white;
-    box-shadow: 0 1px 3px 0 rgba(98, 152, 167, 0.12), 0 11px 40px 0 rgba(25, 62, 72, 0.09);
-}
-
-footer {
-    position: absolute;
-    width: 94%;
-    bottom: 10px;
 }
