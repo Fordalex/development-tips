@@ -27,6 +27,15 @@ a:hover {
     font-size: 18px;
 }
 
+.main-button {
+    background-color: ;
+    background-image: linear-gradient(rgb(108, 148, 208), rgb(73, 116, 179));
+    border: solid 1px rgb(7, 33, 71);
+    border-radius: 4px;
+    color: white;
+    padding: 4px 10px;
+}
+
 
 /* page background */
 
@@ -142,4 +151,23 @@ a:hover {
 }
 
 
-/*  */
+/* footer */
+
+.footer {
+    border-top: solid rgb(205, 205, 215) 1px;
+    background: -webkit-linear-gradient(rgb(238, 238, 242), rgb(248, 248, 252));
+}
+
+.colour-facebook {
+    color: #4267B2;
+}
+
+.colour-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.colour-twitter {
+    color: #38A1F3;
+}
