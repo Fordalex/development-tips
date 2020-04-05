@@ -1,3 +1,54 @@
+/* title */
+
+.title-container {
+    border-bottom: solid rgb(186, 186, 186) 1px;
+    background-color: rgb(248, 248, 252);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+
+/* link container */
+
+.tip-link-container {
+    border-top: solid rgb(69, 69, 69) 3px;
+    border-left: solid rgb(186, 186, 186) 1px;
+    border-right: solid rgb(186, 186, 186) 1px;
+    border-bottom: solid rgb(186, 186, 186) 1px;
+    border-radius: 3px;
+    background: -webkit-linear-gradient(rgb(240, 245, 245), rgb(240, 242, 245), rgb(241, 241, 245));
+    box-shadow: 0 3px 4px 0 rgba(98, 152, 167, 0.07), 0 12px 20px 0 rgba(25, 62, 72, 0.06);
+}
+
+.tip-link-container h5 {
+    color: rgb(62, 62, 62);
+}
+
+.result-container-preview {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    box-shadow: 0 3px 4px 0 rgba(98, 152, 167, 0.04), 0 17px 40px 0 rgba(25, 62, 72, 0.04);
+    padding: 8px;
+}
+
+.text-small {
+    font-size: 10px;
+}
+
+.link-button {
+    background-color: rgb(73, 116, 179);
+    border: solid 1px rgb(7, 33, 71);
+    border-radius: 4px;
+    color: white;
+    padding: 4px 10px;
+}
+
+
 /* footer */
 
 footer {
@@ -17,4 +68,10 @@ footer {
 
 .colour-twitter {
     color: #38A1F3;
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 32px;
+    }
 }

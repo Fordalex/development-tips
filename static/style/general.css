@@ -28,52 +28,17 @@ a:hover {
 }
 
 
-/* title */
+/* page background */
 
-.title-container {
-    border-bottom: solid rgb(186, 186, 186) 1px;
-    background-color: rgb(248, 248, 252);
+.page-wrapper {
+    background-image: url('../../images/background.jpg');
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: solid rgb(193, 193, 193) 1px;
 }
 
 
 /* Navigation Bar */
-
-
-/* link container */
-
-.tip-link-container {
-    border: solid rgb(186, 186, 186) 1px;
-    border-radius: 3px;
-    padding: 8px;
-    background: -webkit-linear-gradient(rgb(250, 255, 255), rgb(250, 252, 255), rgb(251, 251, 255));
-    box-shadow: 0 3px 4px 0 rgba(98, 152, 167, 0.07), 0 12px 20px 0 rgba(25, 62, 72, 0.06);
-}
-
-.tip-link-container h5 {
-    color: rgb(62, 62, 62);
-}
-
-.result-container-preview {
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3px;
-    box-shadow: 0 3px 4px 0 rgba(98, 152, 167, 0.09), 0 17px 40px 0 rgba(25, 62, 72, 0.09);
-    padding: 8px;
-}
-
-.text-small {
-    font-size: 10px;
-}
-
-.link-button {
-    background-color: rgb(73, 116, 179);
-    border: solid 1px rgb(7, 33, 71);
-    border-radius: 4px;
-    color: white;
-    padding: 4px 10px;
-}
 
 
 /* Colours */
@@ -84,6 +49,10 @@ a:hover {
 
 .text-secondary {
     color: rgb(197, 210, 243);
+}
+
+.white-background {
+    background-color: white;
 }
 
 
