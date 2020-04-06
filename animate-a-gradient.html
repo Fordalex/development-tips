@@ -85,10 +85,13 @@
                     </div>
                     <!-- First side (mobile) -->
                     <div class="page-container-mobile">
-                        <video width="85%" controls>
-                            <source src="images/animate-a-gradient-shots/1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <div class="container-fluid d-flex justify-content-center p-0">
+                            <video width="85%" controls autoplay muted loop>
+                                <source src="images/animate-a-gradient-shots/1.mp4" type="video/mp4" autoplay>
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p class="mt-2 mb-0 text-center">This is being shown as a video, to inspect elements please view on desktop.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -175,7 +178,10 @@
                     </div>
                     <!-- Second side (mobile) -->
                     <div class="page-container-mobile">
-                        <img src="images/animate-a-gradient-shots/2.png" style="width:85%; border: solid black 1px;">
+                        <div class="container-fluid d-flex justify-content-center p-0">
+                            <img src="images/animate-a-gradient-shots/2.png" style="width:85%; border: solid black 1px;">
+                        </div>
+                        <p class="mt-2 mb-0 text-center">This is being shown as a image, to inspect elements please view on desktop.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -249,7 +255,10 @@
                     </div>
                     <!-- Third side (mobile) -->
                     <div class="page-container-mobile">
-                        <img src="images/animate-a-gradient-shots/3.png" style="width:85%; border: solid black 1px;">
+                        <div class="container-fluid d-flex justify-content-center p-0">
+                            <img src="images/animate-a-gradient-shots/3.png" style="width:85%; border: solid black 1px;">
+                        </div>
+                        <p class="mt-2 mb-0 text-center">This is being shown as a image, to inspect elements please view on desktop.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -309,9 +318,12 @@
                             </div>
                         </footer>
                     </div>
-                    <!-- First side (mobile) -->
+                    <!-- Forth side (mobile) -->
                     <div class="page-container-mobile">
-                        <img src="images/animate-a-gradient-shots/4.png" style="width:85%;  border: solid black 1px;">
+                        <div class="container-fluid d-flex justify-content-center p-0">
+                            <img src="images/animate-a-gradient-shots/4.png" style="width:85%; border: solid black 1px;">
+                        </div>
+                        <p class="mt-2 mb-0 text-center">This is being shown as a image, to inspect elements please view on desktop.</p>
                     </div>
                 </div>
             </div>
@@ -329,35 +341,34 @@
         </div>
     </div>
 
-
     <div class="row m-0 p-2 footer mt-5">
         <div class="col-12 m-0 p-0">
             <div class="row m-0 p-0">
                 <div class="col-12 col-md-4 col-lg-3  mb-2 p-0 d-flex justify-content-center">
-                    <p class="m-0 p-0">fordsdevelopment@gmail.com</p>
+                    <p class="m-0 p-0 footer-link">fordsdevelopment@gmail.com</p>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2 d-flex justify-content-center m-0 p-0">
                     <a href="https://github.com/Fordalex" class="d-flex justify-content-center align-items-center" target="_blank">
                         <i class="fab fa-github mr-1 text-dark"></i>
-                        <p class="m-0 p-0">github.com/Fordalex</p>
+                        <p class="m-0 p-0 footer-link">github.com/Fordalex</p>
                     </a>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2  d-flex justify-content-center m-0 p-0">
                     <a href="https://www.facebook.com/Fords-development-102522668044543" class="d-flex justify-content-center align-items-center" target="_blank">
                         <i class="fab fa-facebook-square mr-1 colour-facebook"></i>
-                        <p class="m-0 p-0">Fords development</p>
+                        <p class="m-0 p-0 footer-link">Fords development</p>
                     </a>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2 d-flex justify-content-center m-0 p-0">
                     <a href="https://www.instagram.com/fordsdevelopment/?hl=en" class="d-flex justify-content-center align-items-center" target="_blank">
                         <i class="fab fa-instagram mr-1 colour-instagram"></i>
-                        <p class="m-0 p-0">fordsdevelopment</p>
+                        <p class="m-0 p-0 footer-link">fordsdevelopment</p>
                     </a>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-12 mb-2 d-flex justify-content-center m-0 p-0">
                     <a href="https://twitter.com/alexfordsdev" class="d-flex justify-content-center align-items-center" target="_blank">
                         <i class="fab fa-twitter-square mr-1 colour-twitter"></i>
-                        <p class="m-0 p-0">fordsdevelopment</p>
+                        <p class="m-0 p-0 footer-link">fordsdevelopment</p>
                     </a>
                 </div>
             </div>
@@ -368,6 +379,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="static/javascript/javascript.js"></script>
+
 </body>
 
 </html>

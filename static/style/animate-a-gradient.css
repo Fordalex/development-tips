@@ -22,7 +22,8 @@ h1 {
 
 .page-container-mobile {
     margin-top: 25px;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 0px;
     padding-left: 15px;
     padding-right: 15px;
     display: none;
@@ -110,7 +111,6 @@ footer {
         display: none;
     }
     .page-container-mobile {
-        display: flex;
-        justify-content: center;
+        display: block;
     }
 }
