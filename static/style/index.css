@@ -16,6 +16,15 @@
 }
 
 
+/* filter */
+
+.filter-container {
+    background-color: white;
+    padding: 12px;
+    border-bottom: solid rgb(129, 129, 129) 1px;
+}
+
+
 /* link container */
 
 .tip-link-container {

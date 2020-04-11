@@ -33,13 +33,64 @@
             <div class="page-wrapper">
                 <div class="row m-0 p-0">
                     <div class="col-12 m-0 p-0">
-                        <div class="row m-0 p-0">
-                            <div class="col-12 mb-3 mt-2 p-0">
+                        <div class="row m-0 p-0" id="front-end-links-container">
+                            <div class="col-12 mt-1 p-0">
                                 <div class="row m-0 small-title">
-                                    <div class="col-12">
-                                        <h3 class="m-0">FrontEnd</h3>
+                                    <div class="col-12 px-3">
+                                        <h3 class="m-0 float-left">FrontEnd</h3>
+                                        <p>
+                                            <button class="main-button float-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                                Filter
+                                            </button>
+                                        </p>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-12 m-0 p-0 mb-1">
+                                <div class="collapse" id="collapseExample">
+                                    <div class="filter-container pb-3 pt-1 pt-0 px-2">
+                                        <div class="container-fluid d-flex justify-content-between">
+                                            <div>
+                                                <label class="d-block m-0">Html</label>
+                                                <div class="container-fluid d-flex justify-content-center p-0 pt-2">
+                                                    <input type="checkbox" checked>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label class="d-block m-0">Css</label>
+                                                <div class="container-fluid d-flex justify-content-center p-0 pt-2">
+                                                    <input type="checkbox" checked>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label class="d-block m-0">JavaScript</label>
+                                                <div class="container-fluid d-flex justify-content-center p-0 pt-2">
+                                                    <input type="checkbox" checked>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label class="d-block m-0">Jquery</label>
+                                                <div class="container-fluid d-flex justify-content-center p-0 pt-2">
+                                                    <input type="checkbox" checked>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label class="d-block m-0">Python</label>
+                                                <div class="container-fluid d-flex justify-content-center p-0 pt-2">
+                                                    <input type="checkbox" checked>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="container-fluid d-flex justify-content-between mt-2">
+                                            <select class="form-control mr-2">
+                                                <option>Easy > Hard</option>
+                                                <option>Hard > Easy</option>
+                                            </select>
+                                            <button class="main-button float-right">Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                             <!-- Animate a gradient -->
                             <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-0 p-md-2">
@@ -89,7 +140,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-12 p-0 d-flex justify-content-center">
-                                                    <p class="m-0 text-small">Please click the menu to toggle the transition.</p>
+                                                    <p class="m-0 text-small">Please click the menu to toggle the transition.
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -177,8 +229,13 @@
         </div>
     </footer>
 
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="static/javascript/menu-transition.js"></script>
+    <script src="static/javascript/add-links-to-home.js"></script>
 </body>
 
 </html>
