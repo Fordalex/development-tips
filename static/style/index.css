@@ -19,6 +19,7 @@
 /* link container */
 
 .tip-link-container {
+    height: 100%;
     border-top: solid rgb(69, 69, 69) 3px;
     border-left: solid rgb(186, 186, 186) 1px;
     border-right: solid rgb(186, 186, 186) 1px;
@@ -50,5 +51,40 @@
     }
     h3 {
         font-size: 1.5rem;
+    }
+}
+
+
+/* ALL THE PREVIEWS FOR THE LESSONS */
+
+
+/* scroll down animation */
+
+.arrow {
+    width: 10px;
+    height: 10px;
+    border-right: solid 2px;
+    border-bottom: solid 2px;
+    transform: rotate(45deg);
+    animation: arrows 1.5s ease-in-out infinite;
+}
+
+.arrow-mid {
+    animation-delay: 0.5s;
+}
+
+.arrow-bottom {
+    animation-delay: 1s;
+}
+
+@keyframes arrows {
+    0% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
     }
 }

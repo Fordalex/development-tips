@@ -75,7 +75,7 @@ function css_property(property, value) {
 // style jquery
 function jquery(target, method, value, has_function, tabs) {
     if (has_function == false) {
-        var output = '<span class="code-value">$(</span><span class="code-css-value">"' + target + '"</span>).<span class="code-value">' + method + '</span>(<span class="code-css-value">"' + value + '"</span>)'
+        var output = '<span class="code-value">$(</span><span class="code-css-value">"' + target + '"</span>).<span class="code-value">' + method + '</span>(<span class="code-css-value">"' + value + '"</span>);'
     } else {
         var output = '<span class="code-value">$(</span><span class="code-css-value">"' + target + '"</span>).<span class="code-value">' + method + '</span>(<span class="code-css-value">"' + value + '"</span>,<span class="code-property"> function</span>() {'
     }
