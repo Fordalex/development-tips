@@ -27,12 +27,12 @@ a:hover {
     font-size: 18px;
 }
 
-.fa-star {
+.fa-star,
+.fa-star-half-alt {
     font-size: 10px;
 }
 
 .main-button {
-    background-color: ;
     background-image: linear-gradient(rgb(108, 148, 208), rgb(73, 116, 179));
     border: solid 1px rgb(7, 33, 71);
     border-radius: 4px;
@@ -43,6 +43,20 @@ a:hover {
 .main-button:hover {
     color: lightgray;
     background-image: linear-gradient( rgb(73, 116, 179), rgb(108, 148, 208));
+    ;
+}
+
+.main-button-advanced {
+    background-image: linear-gradient(rgb(226, 157, 78), rgb(219, 143, 57));
+    border: solid 1px rgb(7, 33, 71);
+    border-radius: 4px;
+    color: white;
+    padding: 4px 10px;
+}
+
+.main-button-advanced:hover {
+    color: lightgray;
+    background-image: linear-gradient( rgb(219, 143, 57), rgb(226, 157, 78));
     ;
 }
 
@@ -72,6 +86,34 @@ a:hover {
 
 .white-background {
     background-color: white;
+}
+
+.colour-html {
+    color: rgb(230, 65, 65);
+}
+
+.colour-css {
+    color: rgb(230, 159, 65);
+}
+
+.colour-javascript {
+    color: rgb(230, 227, 65);
+}
+
+.colour-jquery {
+    color: rgb(40, 185, 113);
+}
+
+.colour-python {
+    color: rgb(178, 65, 230);
+}
+
+.text-white {
+    color: white;
+}
+
+.text-gray {
+    color: lightgray;
 }
 
 
@@ -158,6 +200,34 @@ a:hover {
     100% {
         background-position: 0% 100%;
     }
+}
+
+
+/* menu transition */
+
+.burger-container {
+    cursor: pointer;
+}
+
+.burger-container div {
+    transition: 0.5s;
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    border-radius: 5px;
+    margin-top: 4px;
+}
+
+.burger-one-closed {
+    transform: scaleX(1) translate(0px, 7px) rotateZ(-45deg);
+}
+
+.burger-two-closed {
+    transform: scaleX(0) translate(0px, 0px) rotateZ(0deg);
+}
+
+.burger-three-closed {
+    transform: scaleX(1) translate(0px, -7px) rotateZ(45deg);
 }
 
 

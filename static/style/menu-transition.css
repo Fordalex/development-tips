@@ -1,0 +1,127 @@
+/* toggle an animation */
+
+.burger-container {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.burger-container div {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+
+/* position of each burger div */
+
+.burger-one {
+    top: 0px;
+}
+
+.burger-two {
+    top: 8px;
+}
+
+.burger-three {
+    top: 16px;
+}
+
+
+/* assign the aniamtion to a class */
+
+.nav-open-one {
+    animation: nav-one-open .5s ease-in-out forwards;
+}
+
+.nav-close-one {
+    animation: nav-one-close .5s ease-in-out forwards;
+}
+
+.nav-open-two {
+    animation: nav-two-open .5s ease-in-out forwards;
+}
+
+.nav-close-two {
+    animation: nav-two-close .5s ease-in-out forwards;
+}
+
+.nav-open-three {
+    animation: nav-three-open .5s ease-in-out forwards;
+}
+
+.nav-close-three {
+    animation: nav-three-close .5s ease-in-out forwards;
+}
+
+
+/* the animations */
+
+@keyframes nav-one-open {
+    0% {
+        top: 0px;
+        transform: rotateZ(0deg);
+    }
+    100% {
+        top: 8px;
+        transform: rotateZ(45deg);
+    }
+}
+
+@keyframes nav-one-close {
+    100% {
+        top: 0px;
+        transform: rotateZ(0deg);
+    }
+    0% {
+        top: 8px;
+        transform: rotateZ(45deg);
+    }
+}
+
+@keyframes nav-two-open {
+    0% {
+        opacity: 100%;
+        transform: scaleX(1);
+    }
+    100% {
+        opacity: 0%;
+        transform: scaleX(0);
+    }
+}
+
+@keyframes nav-two-close {
+    100% {
+        opacity: 100%;
+        transform: scaleX(1);
+    }
+    0% {
+        opacity: 0%;
+        transform: scaleX(0);
+    }
+}
+
+@keyframes nav-three-open {
+    0% {
+        top: 16px;
+        transform: rotateZ(0deg);
+    }
+    100% {
+        top: 8px;
+        transform: rotateZ(-45deg);
+    }
+}
+
+@keyframes nav-three-close {
+    100% {
+        top: 16px;
+        transform: rotateZ(0deg);
+    }
+    0% {
+        top: 8px;
+        transform: rotateZ(-45deg);
+    }
+}

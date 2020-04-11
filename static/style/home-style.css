@@ -34,12 +34,10 @@
 
 .result-container-preview {
     background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 3px;
     box-shadow: 0 3px 4px 0 rgba(98, 152, 167, 0.04), 0 17px 40px 0 rgba(25, 62, 72, 0.04);
     padding: 8px;
+    height: 120px;
 }
 
 .text-small {
@@ -48,7 +46,7 @@
 
 @media only screen and (max-width: 600px) {
     h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     h3 {
         font-size: 1.5rem;
