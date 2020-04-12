@@ -18,7 +18,7 @@
 //     }
 // });
 
-$('.burger-container').on('click', function() {
+$('body').on('click', '.burger-container', function() {
     $('.burger-one').toggleClass('burger-one-closed')
     $('.burger-two').toggleClass('burger-two-closed')
     $('.burger-three').toggleClass('burger-three-closed')

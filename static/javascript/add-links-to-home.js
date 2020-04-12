@@ -4,11 +4,26 @@ var animateAGradientPreview = `
 `;
 
 var menuTransitionPreview = `
-                        <div class="burger-container">
-                            <div class="burger-one"></div>
-                            <div class="burger-two"></div>
-                            <div class="burger-three"></div>
-                        </div>  
+                            <div class="row m-0 p-0">
+                                <div class="col-12 p-0 d-flex justify-content-center mt-4 mb-3">
+                                    <div class="burger-container">
+                                        <div class="burger-one"></div>
+                                        <div class="burger-two"></div>
+                                        <div class="burger-three"></div>
+                                    </div>
+                                </div>
+                                <div class="col-12 p-0 d-flex justify-content-center">
+                                    <p class="mb-4 text-small">Please click the menu to toggle the transition.</p>
+                                </div>
+                            </div>
+`;
+
+var scrollDownAnimation = `
+                        <div>
+                            <div class="arrow"></div>
+                            <div class="arrow arrow-mid"></div>
+                            <div class="arrow arrow-bottom"></div>
+                        </div>
 `;
 
 // All the link stored in a dictionary
@@ -18,37 +33,99 @@ var allLinks = {
         'languages': ['html', 'css'],
         'difficulty': 1,
         'preview': animateAGradientPreview,
+        'link': 'animate-a-gradient.html',
         'created': '04/04/2020'
     },
     'menu-transition': {
         'title': 'Menu transition',
-        'languages': ['Html', 'Css', 'Jquery'],
+        'languages': ['html', 'css', 'jquery'],
         'difficulty': 1.5,
         'preview': menuTransitionPreview,
+        'link': 'menu-transition.html',
         'created': '11/04/2020'
+    },
+    'Scroll-down-animation': {
+        'title': 'Scroll down animation',
+        'languages': ['html', 'css'],
+        'difficulty': 1,
+        'preview': scrollDownAnimation,
+        'link': 'scroll-down-animation.html',
+        'created': '12/04/2020'
     }
 }
 
 // formats the links ready to be appended to the home page
-function appendLinkToPage(linkTitle, linkLanguages, linkDifficulty, linkPreview, linkCreated) {
-    var table = `<div class="col-12 col-sm-6 col-md-4 col-lg-3 p-0 p-md-2">
+function appendLinkToPage(linkTitle, linkLanguages, linkDifficulty, linkPreview, link, linkCreated) {
+    // styling the languages list
+    var languagesArray = [];
+    var html = '<span class="colour-html"><b>HTML</b></span>';
+    var css = '<span class="colour-css"><b>CSS</b></span>';
+    var javascript = '<span class="colour-css"><b>CSS</b></span>';
+    var jquery = '<span class="colour-jquery"><b>Jquery</b></span>';
+    var python = '<span class="colour-css"><b>CSS</b></span>';
+
+    if (linkLanguages.includes("html") == true) {
+        languagesArray.push(html)
+    };
+
+    if (linkLanguages.includes("css") == true) {
+        languagesArray.push(css)
+    };
+
+    if (linkLanguages.includes("javascript") == true) {
+        languagesArray.push(javascript)
+    };
+
+    if (linkLanguages.includes("jquery") == true) {
+        languagesArray.push(jquery)
+    };
+
+    if (linkLanguages.includes("python") == true) {
+        languagesArray.push(python)
+    };
+
+    // creating the stars out of the difficulty rating
+    var difficulty = [];
+    if (linkDifficulty % 1 == 0) {
+        for (let i = 0; i < linkDifficulty; i++) {
+            difficulty = difficulty + '<i class="fas fa-star"></i>'
+        }
+    } else {
+        for (let i = 0; i < linkDifficulty - 0.5; i++) {
+            difficulty = difficulty + '<i class="fas fa-star"></i>'
+        }
+        difficulty = difficulty + '<i class="fas fa-star-half-alt"></i>'
+    };
+    // adding the empty stars
+    var remainingStars = 5 - linkDifficulty;
+    if (remainingStars % 1 == 0) {
+        for (let i = 0; i < remainingStars; i++) {
+            difficulty = difficulty + '<i class="far fa-star"></i>'
+        }
+    } else {
+        for (let i = 0; i < remainingStars - 0.5; i++) {
+            difficulty = difficulty + '<i class="far fa-star"></i>'
+        }
+    };
+
+    var table = `<div class="col-12 col-sm-6 col-md-4 col-lg-3 px-0 py-2 p-sm-2 link">
                     <div class="tip-link-container">
                         <div class="white-background p-2">
                             <h5 class="m-0">${linkTitle}</h5>
                         </div>
                         <div class="p-2">
                             <div class="d-flex justify-content-between">
-                                <p class="text-secondary text-small p-0 m-0 mb-1">Languages: ${linkLanguages}</p>
+                                <p class="text-secondary text-small p-0 m-0 mb-1">Languages: ${languagesArray}</p>
                                 <div class="d-flex justify-content-start align-items-center mb-1">
                                     <p class="m-0 text-small mr-1">Difficulty:</p>
-                                    ${linkDifficulty}
+                                    ${difficulty}
                                 </div>
                             </div>
                             <div class="result-container-preview d-flex justify-content-center align-items-center">
                                 ${linkPreview}
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-2">
-                                <a href="animate-a-gradient.html" class="main-button">Learn</a>
+                                <a href="${link}" class="main-button">Learn</a>
                                 <p class="text-secondary text-small p-0 m-0">Created: ${linkCreated}</p>
                             </div>
                         </div>
@@ -57,12 +134,64 @@ function appendLinkToPage(linkTitle, linkLanguages, linkDifficulty, linkPreview,
     return $('#front-end-links-container').append(table);
 }
 
+// when the document has loaded the links will be appended to the page.
+$(document).ready(function() {
+    for (var i in allLinks) {
+        var title = allLinks[i]['title'];
+        var languages = allLinks[i]['languages'];
+        var difficulty = allLinks[i]['difficulty'];
+        var preview = allLinks[i]['preview'];
+        var link = allLinks[i]['link']
+        var created = allLinks[i]['created'];
+        appendLinkToPage(title, languages, difficulty, preview, link, created)
+    }
+});
 
-for (var i in allLinks) {
-    var title = allLinks[i]['title'];
-    var languages = allLinks[i]['languages'];
-    var difficulty = allLinks[i]['difficulty'];
-    var preview = allLinks[i]['preview'];
-    var created = allLinks[i]['created'];
-    appendLinkToPage(title, languages, difficulty, preview, created)
+// filter the lessons on the page
+
+function filter() {
+    $('.link').remove();
+
+    for (var i in allLinks) {
+
+        var title = allLinks[i]['title'];
+        var languages = allLinks[i]['languages'];
+        var difficulty = allLinks[i]['difficulty'];
+        var preview = allLinks[i]['preview'];
+        var link = allLinks[i]['link']
+        var created = allLinks[i]['created'];
+
+        var html = $('#html-checkbox').prop('checked')
+        var css = $('#css-checkbox').prop('checked')
+        var javascript = $('#javascript-checkbox').prop('checked')
+        var jquery = $('#jquery-checkbox').prop('checked')
+        var python = $('#python-checkbox').prop('checked')
+
+        var searchLanguages = '';
+
+        if (html == true) {
+            searchLanguages = searchLanguages + 'html'
+        }
+
+        if (css == true) {
+            searchLanguages = searchLanguages + 'css'
+        }
+
+        if (javascript == true) {
+            searchLanguages = searchLanguages + 'javascript'
+        }
+
+        if (jquery == true) {
+            searchLanguages = searchLanguages + 'jquery'
+        }
+
+        if (python == true) {
+            searchLanguages = searchLanguages + 'python'
+        }
+
+        if (languages.includes(searchLanguages)) {
+            appendLinkToPage(title, languages, difficulty, preview, link, created)
+        }
+
+    }
 }

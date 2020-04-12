@@ -178,59 +178,6 @@ a:hover {
 }
 
 
-/* results */
-
-
-/* animate a gradient */
-
-.animate-a-gradient-result {
-    font-size: 70px;
-    background: -webkit-linear-gradient(#6dc1be, #aad643, #2ed16f);
-    background-position: 0% 0%;
-    background-size: 100% 500%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient-animation 5s ease-in-out infinite alternate;
-}
-
-@keyframes gradient-animation {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: 0% 100%;
-    }
-}
-
-
-/* menu transition */
-
-.burger-container {
-    cursor: pointer;
-}
-
-.burger-container div {
-    transition: 0.5s;
-    width: 30px;
-    height: 3px;
-    background-color: black;
-    border-radius: 5px;
-    margin-top: 4px;
-}
-
-.burger-one-closed {
-    transform: scaleX(1) translate(0px, 7px) rotateZ(-45deg);
-}
-
-.burger-two-closed {
-    transform: scaleX(0) translate(0px, 0px) rotateZ(0deg);
-}
-
-.burger-three-closed {
-    transform: scaleX(1) translate(0px, -7px) rotateZ(45deg);
-}
-
-
 /* footer */
 
 .footer {
