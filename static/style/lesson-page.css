@@ -40,10 +40,10 @@ h1 {
     border-top: solid rgb(182, 182, 182) 1px;
 }
 
-
-/* title page */
-
 .result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 11px;
     width: 94%;
     height: 210px;
@@ -52,35 +52,6 @@ h1 {
     border: solid white 1px;
     border-radius: 5px;
     box-shadow: 0 1px 3px 0 rgba(98, 152, 167, 0.12), 0 11px 40px 0 rgba(25, 62, 72, 0.09);
-}
-
-.result-wrapper {
-    height: 98%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-/* The result */
-
-.result {
-    font-size: 110px;
-    background: -webkit-linear-gradient(#6dc1be, #aad643, #2ed16f);
-    background-position: 0% 0%;
-    background-size: 100% 500%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient-animation 5s ease-in-out infinite alternate;
-}
-
-@keyframes gradient-animation {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: 0% 100%;
-    }
 }
 
 
