@@ -68,8 +68,12 @@ function css_target(target) {
     return `<p class="code-font"><span class="code-target">${target}</span> {</p>`
 }
 
-function css_property(property, value) {
-    return `<p class="code-font">&emsp;&emsp;<span class="code-property">${property}<span class="text-white">:</span></span> <span class="code-value">${value}</span>;</p>`
+function css_property(property, value, tabs) {
+    var tabs_input = ''
+    for (i = 0; i < tabs; i++) {
+        tabs_input = tabs_input + '&emsp;&emsp;'
+    }
+    return `<p class="code-font">${tabs_input}&emsp;&emsp;<span class="code-property">${property}<span class="text-white">:</span></span> <span class="code-value">${value}</span>;</p>`
 }
 
 // style jquery
@@ -117,6 +121,15 @@ $('#css-code-first').append(css_property('animation-delay', '1s'));
 $('#css-code-first').append('}');
 
 // second css code
-$('#css-code-second').append(css_target('@keyframes arrows'));
-$('#css-code-second').append(css_property('transform', 'scaleX(1) translate(0px, 7px) rotateZ(-45deg)'));
-$('#css-code-second').append('}');
+$('#css-code-second').append(css_target('<span class="colour-python">@keyframes</span> arrows'));
+$('#css-code-second').append('&emsp;&emsp;0% {');
+$('#css-code-second').append(css_property('opacity', '1', 1));
+$('#css-code-second').append('&emsp;&emsp;}');
+$('#css-code-second').append('<br>');
+$('#css-code-second').append('&emsp;&emsp;80% {');
+$('#css-code-second').append(css_property('opacity', '0', 1));
+$('#css-code-second').append('&emsp;&emsp;}');
+$('#css-code-second').append('<br>');
+$('#css-code-second').append('&emsp;&emsp;100% {');
+$('#css-code-second').append(css_property('opacity', '0', 1));
+$('#css-code-second').append('&emsp;&emsp;}');

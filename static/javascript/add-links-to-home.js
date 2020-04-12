@@ -48,7 +48,7 @@ var allLinks = [{
         'languages': ['html', 'css'],
         'difficulty': 1,
         'preview': scrollDownAnimation,
-        'link': 'coming-soon.html',
+        'link': 'scroll-down-animation.html',
         'created': '12/04/2020'
     }
 ];
