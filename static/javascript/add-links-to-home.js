@@ -27,8 +27,7 @@ var scrollDownAnimation = `
 `;
 
 // All the link stored in a dictionary
-var allLinks = {
-    'animate-a-gradient': {
+var allLinks = [{
         'title': 'Animate a gradient',
         'languages': ['html', 'css'],
         'difficulty': 1,
@@ -36,7 +35,7 @@ var allLinks = {
         'link': 'animate-a-gradient.html',
         'created': '04/04/2020'
     },
-    'menu-transition': {
+    {
         'title': 'Menu transition',
         'languages': ['html', 'css', 'jquery'],
         'difficulty': 1.5,
@@ -44,7 +43,7 @@ var allLinks = {
         'link': 'menu-transition.html',
         'created': '11/04/2020'
     },
-    'Scroll-down-animation': {
+    {
         'title': 'Scroll down animation',
         'languages': ['html', 'css'],
         'difficulty': 1,
@@ -52,7 +51,7 @@ var allLinks = {
         'link': 'scroll-down-animation.html',
         'created': '12/04/2020'
     }
-}
+];
 
 // formats the links ready to be appended to the home page
 function appendLinkToPage(linkTitle, linkLanguages, linkDifficulty, linkPreview, link, linkCreated) {
@@ -136,62 +135,76 @@ function appendLinkToPage(linkTitle, linkLanguages, linkDifficulty, linkPreview,
 
 // when the document has loaded the links will be appended to the page.
 $(document).ready(function() {
-    for (var i in allLinks) {
-        var title = allLinks[i]['title'];
-        var languages = allLinks[i]['languages'];
-        var difficulty = allLinks[i]['difficulty'];
-        var preview = allLinks[i]['preview'];
-        var link = allLinks[i]['link']
-        var created = allLinks[i]['created'];
+    var sortLinks = allLinks.sort(function(b, a) { return b.difficulty - a.difficulty });
+
+    for (let i = 0; i < sortLinks.length; i++) {
+        var title = sortLinks[i]['title'];
+        var languages = sortLinks[i]['languages'];
+        var difficulty = sortLinks[i]['difficulty'];
+        var preview = sortLinks[i]['preview'];
+        var link = sortLinks[i]['link']
+        var created = sortLinks[i]['created'];
         appendLinkToPage(title, languages, difficulty, preview, link, created)
     }
 });
 
 // filter the lessons on the page
-
 function filter() {
     $('.link').remove();
 
-    for (var i in allLinks) {
+    var sort = $('#sort-links').val()
 
-        var title = allLinks[i]['title'];
-        var languages = allLinks[i]['languages'];
-        var difficulty = allLinks[i]['difficulty'];
-        var preview = allLinks[i]['preview'];
-        var link = allLinks[i]['link']
-        var created = allLinks[i]['created'];
-
-        var html = $('#html-checkbox').prop('checked')
-        var css = $('#css-checkbox').prop('checked')
-        var javascript = $('#javascript-checkbox').prop('checked')
-        var jquery = $('#jquery-checkbox').prop('checked')
-        var python = $('#python-checkbox').prop('checked')
-
-        var searchLanguages = '';
-
-        if (html == true) {
-            searchLanguages = searchLanguages + 'html'
-        }
-
-        if (css == true) {
-            searchLanguages = searchLanguages + 'css'
-        }
-
-        if (javascript == true) {
-            searchLanguages = searchLanguages + 'javascript'
-        }
-
-        if (jquery == true) {
-            searchLanguages = searchLanguages + 'jquery'
-        }
-
-        if (python == true) {
-            searchLanguages = searchLanguages + 'python'
-        }
-
-        if (languages.includes(searchLanguages)) {
-            appendLinkToPage(title, languages, difficulty, preview, link, created)
-        }
-
+    if (sort == 'easyHard') {
+        var sortLinks = allLinks.sort(function(b, a) { return b.difficulty - a.difficulty });
+    } else {
+        var sortLinks = allLinks.sort(function(a, b) { return b.difficulty - a.difficulty });
     }
+
+    for (let i = 0; i < sortLinks.length; i++) {
+        var title = sortLinks[i]['title'];
+        var languages = sortLinks[i]['languages'];
+        var difficulty = sortLinks[i]['difficulty'];
+        var preview = sortLinks[i]['preview'];
+        var link = sortLinks[i]['link']
+        var created = sortLinks[i]['created'];
+        appendLinkToPage(title, languages, difficulty, preview, link, created)
+    }
+
+
+
+    // var html = $('#html-checkbox').prop('checked')
+    // var css = $('#css-checkbox').prop('checked')
+    // var javascript = $('#javascript-checkbox').prop('checked')
+    // var jquery = $('#jquery-checkbox').prop('checked')
+    // var python = $('#python-checkbox').prop('checked')
+
+
+
+    // var searchLanguages = '';
+
+    // if (html == true) {
+    //     searchLanguages = searchLanguages + 'html'
+    // }
+
+    // if (css == true) {
+    //     searchLanguages = searchLanguages + 'css'
+    // }
+
+    // if (javascript == true) {
+    //     searchLanguages = searchLanguages + 'javascript'
+    // }
+
+    // if (jquery == true) {
+    //     searchLanguages = searchLanguages + 'jquery'
+    // }
+
+    // if (python == true) {
+    //     searchLanguages = searchLanguages + 'python'
+    // }
+
+    // if (languages.includes(searchLanguages)) {
+    //     
+    // }
+
+    // }
 }
