@@ -26,32 +26,22 @@ var scrollDownAnimation = `
                         </div>
 `;
 
-// All the link stored in a dictionary
-var allLinks = [{
-        'title': 'Animate a gradient',
-        'languages': ['html', 'css'],
-        'difficulty': 1,
-        'preview': animateAGradientPreview,
-        'link': 'animate-a-gradient.html',
-        'created': '04/04/2020'
-    },
-    {
-        'title': 'Menu transition',
-        'languages': ['html', 'css', 'jquery'],
-        'difficulty': 1.5,
-        'preview': menuTransitionPreview,
-        'link': 'menu-transition.html',
-        'created': '11/04/2020'
-    },
-    {
-        'title': 'Scroll down animation',
-        'languages': ['html', 'css'],
-        'difficulty': 1,
-        'preview': scrollDownAnimation,
-        'link': 'scroll-down-animation.html',
-        'created': '12/04/2020'
-    }
-];
+// Creating the link objects
+function link(title, languages, difficulty, preview, link, created) {
+    this.title = title;
+    this.languages = languages;
+    this.difficulty = difficulty;
+    this.preview = preview;
+    this.link = link;
+    this.created = created;
+}
+
+var animate_a_gradient = new link('Animate a gradient', ['html', 'css'], 1, animateAGradientPreview, 'animate-a-gradient.html', '04/04/2020');
+var menu_transition = new link('Menu transition', ['html', 'css', 'jquery'], 1.5, menuTransitionPreview, 'menu-transition.html', '11/04/2020');
+var scroll_down_animation = new link('Scroll down animation', ['html', 'css'], 1, scrollDownAnimation, 'scroll-down-animation.html', '12/04/2020');
+
+// All the links stored in an array
+var allLinks = [animate_a_gradient, menu_transition, scroll_down_animation];
 
 // formats the links ready to be appended to the home page
 function appendLinkToPage(linkTitle, linkLanguages, linkDifficulty, linkPreview, link, linkCreated) {
@@ -135,6 +125,7 @@ function appendLinkToPage(linkTitle, linkLanguages, linkDifficulty, linkPreview,
 
 // when the document has loaded the links will be appended to the page.
 $(document).ready(function() {
+
     var sortLinks = allLinks.sort(function(b, a) { return b.difficulty - a.difficulty });
 
     for (let i = 0; i < sortLinks.length; i++) {

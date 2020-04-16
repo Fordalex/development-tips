@@ -118,16 +118,16 @@ $('#css-code-second').append(css_target('.burger-one-closed'));
 $('#css-code-second').append(css_property('transform', 'scaleX(1) translate(0px, 7px) rotateZ(-45deg)'));
 $('#css-code-second').append('}');
 // tab start
-$('#css-code-second').append('<p class="code-font"><br></p>');
-// tab end
-$('#css-code-second').append(css_target('.burger-one-closed'));
-$('#css-code-second').append(css_property('transform', 'scaleX(1) translate(0px, 7px) rotateZ(-45deg)'));
+$('#css-code-second').append('<p class="code-font"><br></p>')
+    // tab end
+$('#css-code-second').append(css_target('.burger-two-closed'));
+$('#css-code-second').append(css_property('transform', 'scaleX(0) translate(0px, 0px) rotateZ(0deg)'));
 $('#css-code-second').append('}');
 // tab start
 $('#css-code-second').append('<p class="code-font"><br></p>');
 // tab end
-$('#css-code-second').append(css_target('.burger-one-closed'));
-$('#css-code-second').append(css_property('transform', 'scaleX(1) translate(0px, 7px) rotateZ(-45deg)'));
+$('#css-code-second').append(css_target('.burger-three-closed'));
+$('#css-code-second').append(css_property('transform', 'scaleX(1) translate(0px, -7px) rotateZ(45deg)'));
 $('#css-code-second').append('}');
 
 // first jquery code
