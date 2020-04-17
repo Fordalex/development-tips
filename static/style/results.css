@@ -81,3 +81,22 @@
         opacity: 0;
     }
 }
+
+
+/* expand close */
+
+.expand-button {
+    background-color: rgb(67, 243, 123);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button-close {
+    background-color: red;
+}
+
+.hidden-text {
+    display: none;
+}

@@ -1,4 +1,91 @@
-// The result for the lesson
+// The style functions
+function html_element(html_code) {
+    var htmlArray = [];
+
+    // push letters for the string into an array
+    for (var i = 0; i < html_code.length; i++) {
+        var singleLetter = html_code.charAt(i);
+        if (singleLetter == '"') {
+            htmlArray.push("'")
+        } else {
+            htmlArray.push(singleLetter)
+        }
+    }
+
+    var htmlString = '';
+    var addSpaceArray = ["=", '"', "'"]
+
+    // convert the symbols into regular expression
+    for (var i = 0; i < htmlArray.length; i++) {
+        var singleLetter = htmlArray[i]
+        if (singleLetter == '<') {
+            htmlString = htmlString + ' &lt; ';
+        } else if (singleLetter == '>') {
+            htmlString = htmlString + ' &gt; ';
+        } else if (addSpaceArray.includes(singleLetter)) {
+            htmlString = htmlString + ' ' + singleLetter + ' ';
+        } else if (singleLetter == '&') {
+            htmlString = htmlString + '<br>';
+        } else {
+            htmlString = htmlString + singleLetter;
+        }
+    }
+
+    console.log(htmlString)
+
+    var wordArray = htmlString.split(" ")
+    var styledString = '';
+
+    var htmlTags = ["div", "/div", "p", "/p", "a", "/a", "h1", "/h1", "b", "/b"]
+    var htmlAttributes = ["class", "style", "type"]
+
+    console.log(wordArray)
+
+    var inAttribute = false;
+    var shouldBreak = 0;
+    // style the code
+    for (var i = 0; i < wordArray.length; i++) {
+        var singleWord = wordArray[i];
+        if (inAttribute == true && singleWord == "'") {
+            inAttribute = false;
+            styledString = styledString + '"';
+            shouldBreak = 0;
+        } else if (inAttribute == true) {
+            styledString = styledString + '<span class="code-value">' + singleWord + '</span>';
+            shouldBreak = 0;
+        } else if (inAttribute == false && singleWord == "'") {
+            inAttribute = true;
+            styledString = styledString + '"';
+            shouldBreak = 0;
+        } else if (singleWord == "↵") {
+            styledString = styledString + '\n'
+            shouldBreak = 0;
+        } else if (htmlTags.includes(singleWord)) {
+            styledString = styledString + '<span class="code-tag">' + singleWord + '</span>';
+            shouldBreak = 0;
+        } else if (htmlAttributes.includes(singleWord)) {
+            styledString = styledString + '<span class="code-attribute"> ' + singleWord + '</span>';
+            shouldBreak = 0;
+        } else if (singleWord == "") {
+            shouldBreak++;
+            if (shouldBreak == 4) {
+                styledString = styledString + '<br>&emsp;&emsp;';
+            }
+        } else if (singleWord.includes('*')) {
+            styledString = styledString + '<br>';
+        } else {
+            styledString = styledString + singleWord;
+            shouldBreak = 0;
+        }
+        console.log(shouldBreak)
+    }
+
+    console.log(styledString)
+
+    return styledString
+}
+
+// The result for the lesson ##################
 var result = `
     <p>This is the result</p>
 `;
@@ -10,7 +97,7 @@ function home_slide(languages, title, description, result) {
     this.result = result;
 }
 
-//  For the home page add the, (languages) (title) (description) (result)
+//  For the home page add the, (languages) (title) (description) (result) #########################
 var home_slide = new home_slide(['html', 'css'], 'Template title', 'This is a test page to speed up development', result)
 
 var homeSlide = `
@@ -208,21 +295,24 @@ function informationSlide(languages) {
     this.html = lessonSlide;
 }
 
-function html_element(html_code) {
-    return html_code
-}
 
-function html_element_with_attribute(html_code) {
-    return html_code
-}
+// Create the slides with the information code. ######################
+var htmlCodeFirstSlide = html_element(`
+<div class="hello work">
+    <p class="text-ligt another">Hello I should work!</p>
+    <a class="button"><b>Big letters</b></a>*
+</div>
+`);
 
-// Create the slides with the information code.
-var firstSlide = new informationSlide([{ 'language': 'html', 'code': html_element_with_attribute('< div class =" text-danger "> content </ div >') }, { 'language': 'css', 'code': html_element('The css code') }]);
+var cssCodefirstSlide = html_element('.property { width: 50px }')
+
+// The amount of sildes that are needed ##############
+var firstSlide = new informationSlide([{ 'language': 'html', 'code': htmlCodeFirstSlide }, { 'language': 'html', 'code': htmlCodeFirstSlide }]);
 
 var totalSlides = [firstSlide]
 
 
-
+// Populates the page with the sildes
 for (let i = 0; i < totalSlides.length + 1; i++) {
     if (i < totalSlides.length) {
         $('#carousel-list-container').append(`<li data-target="#carouselExampleIndicators" data-slide-to="${i + 1}"></li`);

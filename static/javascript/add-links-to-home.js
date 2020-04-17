@@ -5,15 +5,12 @@ var animateAGradientPreview = `
 
 var menuTransitionPreview = `
                             <div class="row m-0 p-0">
-                                <div class="col-12 p-0 d-flex justify-content-center mt-4 mb-3">
+                                <div class="col-12 p-0 d-flex justify-content-center mt-2 mb-3">
                                     <div class="burger-container">
                                         <div class="burger-one"></div>
                                         <div class="burger-two"></div>
                                         <div class="burger-three"></div>
                                     </div>
-                                </div>
-                                <div class="col-12 p-0 d-flex justify-content-center">
-                                    <p class="mb-4 text-small">Please click the menu to toggle the transition.</p>
                                 </div>
                             </div>
 `;
@@ -24,6 +21,14 @@ var scrollDownAnimation = `
                             <div class="arrow arrow-mid"></div>
                             <div class="arrow arrow-bottom"></div>
                         </div>
+`;
+
+const extendClose = `<div class="row m-0 p-0">
+                        <div style="width:145px; height:50px;">
+                            <a class="expand-button text-dark text-center d-block">Expand</a>
+                            <p class="hidden-text m-0">Hidden Information!</p>
+                        </div>
+</div>
 `;
 
 // Creating the link objects
@@ -39,9 +44,10 @@ function link(title, languages, difficulty, preview, link, created) {
 var animate_a_gradient = new link('Animate a gradient', ['html', 'css'], 1, animateAGradientPreview, 'animate-a-gradient.html', '04/04/2020');
 var menu_transition = new link('Menu transition', ['html', 'css', 'jquery'], 1.5, menuTransitionPreview, 'menu-transition.html', '11/04/2020');
 var scroll_down_animation = new link('Scroll down animation', ['html', 'css'], 1, scrollDownAnimation, 'scroll-down-animation.html', '12/04/2020');
+var extend_close = new link('Extend to close transition', ['html', 'css', 'jquery'], 1.5, extendClose, 'coming-soon.html', '17/04/2020');
 
 // All the links stored in an array
-var allLinks = [animate_a_gradient, menu_transition, scroll_down_animation];
+var allLinks = [animate_a_gradient, menu_transition, scroll_down_animation, extend_close];
 
 // formats the links ready to be appended to the home page
 function appendLinkToPage(linkTitle, linkLanguages, linkDifficulty, linkPreview, link, linkCreated) {
