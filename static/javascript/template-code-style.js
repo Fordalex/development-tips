@@ -24,8 +24,8 @@ function html_element(html_code) {
             htmlString = htmlString + ' &gt; ';
         } else if (addSpaceArray.includes(singleLetter)) {
             htmlString = htmlString + ' ' + singleLetter + ' ';
-        } else if (singleLetter == '&') {
-            htmlString = htmlString + '<br>';
+        } else if (singleLetter == '?') {
+            htmlString = htmlString + '&emsp;&emsp;';
         } else {
             htmlString = htmlString + singleLetter;
         }
@@ -36,8 +36,8 @@ function html_element(html_code) {
     var wordArray = htmlString.split(" ")
     var styledString = '';
 
-    var htmlTags = ["div", "/div", "p", "/p", "a", "/a", "h1", "/h1", "b", "/b"]
-    var htmlAttributes = ["class", "style", "type"]
+    var htmlTags = ["div", "/div", "p", "/p", "a", "/a", "h1", "/h1", "b", "/b", "select", "/select", "option", "/option", "button", "/button"]
+    var htmlAttributes = ["class", "style", "type", "id", "value"]
 
     console.log(wordArray)
 
@@ -296,18 +296,21 @@ function informationSlide(languages) {
 }
 
 
-// Create the slides with the information code. ######################
+// Create the slides with the information code. ###################### (* = <br>, ? = &emsp;&emsp;)
 var htmlCodeFirstSlide = html_element(`
-<div class="hello work">
-    <p class="text-ligt another">Hello I should work!</p>
-    <a class="button"><b>Big letters</b></a>*
+<div class="container-fluid d-flex justify-content-between mt-2">
+    <select class="form-control mr-2" id="sort-links">
+        ?<option value="easyHard">Easy > Hard</option>
+        ?<option value="hardEasy">Hard > Easy</option>
+    </select>
+    <button class="main-button float-right" onclick="filter()">Search</button>*
 </div>
 `);
 
 var cssCodefirstSlide = html_element('.property { width: 50px }')
 
 // The amount of sildes that are needed ##############
-var firstSlide = new informationSlide([{ 'language': 'html', 'code': htmlCodeFirstSlide }, { 'language': 'html', 'code': htmlCodeFirstSlide }]);
+var firstSlide = new informationSlide([{ 'language': 'html', 'code': htmlCodeFirstSlide }, { 'language': 'css', 'code': htmlCodeFirstSlide }]);
 
 var totalSlides = [firstSlide]
 
