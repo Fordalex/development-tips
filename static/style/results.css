@@ -85,18 +85,41 @@
 
 /* expand close */
 
+a:not([href]) {
+    color: initial;
+}
+
+button:focus {
+    outline: none;
+}
+
 .expand-button {
-    background-color: rgb(67, 243, 123);
+    background-color: rgb(24, 187, 76);
     color: white;
     padding: 5px 10px;
-    border-radius: 10px;
+    border-bottom: solid rgb(21, 152, 63) 4px;
+    border-radius: 5px;
     cursor: pointer;
+    font-family: 'Pacifico', cursive;
+}
+
+.expand-button:hover {
+    border-bottom: solid rgb(24, 187, 76) 4px;
+    background-color: rgb(21, 152, 63);
+    color: rgb(216, 223, 89);
 }
 
 .button-close {
     background-color: red;
+    border-bottom: solid rgb(162, 14, 14) 4px;
 }
 
-.hidden-text {
+.button-close:hover {
+    border-bottom: solid red 4px;
+    background-color: rgb(162, 14, 14);
+    color: rgb(178, 223, 89);
+}
+
+.button-text {
     display: none;
 }

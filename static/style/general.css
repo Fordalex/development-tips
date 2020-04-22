@@ -80,6 +80,10 @@ a:hover {
     color: rgb(90, 140, 189)
 }
 
+.variable-colour {
+    color: rgb(160, 198, 236)
+}
+
 .text-secondary {
     color: rgb(197, 210, 243);
 }

@@ -1,5 +1,4 @@
 // The style functions
-
 function style_html_element(html_code) {
     var htmlArray = [];
 
@@ -75,7 +74,7 @@ function style_html_element(html_code) {
             shouldBreak = 0;
         }
     }
-
+    console.log(styledString)
     return styledString
 }
 
@@ -120,6 +119,7 @@ function style_css_properties(css_code) {
             styledCssString = styledCssString + cssWord + '<br>'
         }
     }
+    console.log(styledCssString)
     return styledCssString
 }
 
@@ -162,6 +162,12 @@ function style_jquery_code(jquery_code) {
                 tabString = tabString + '&emsp;&emsp;';
             }
             jqueryStringStyled = jqueryStringStyled + tabString + jqueryWord + '</span>';
+        } else if (jqueryWord.includes('var')) {
+            var tabString = '<span class="code-property">';
+            for (var t = 0; t < insideBracket; t++) {
+                tabString = tabString + '&emsp;&emsp;';
+            }
+            jqueryStringStyled = jqueryStringStyled + tabString + jqueryWord + ' </span>';
         } else if (jqueryWord.includes("'")) {
             jqueryStringStyled = jqueryStringStyled + '<span class="code-css-value">' + jqueryWord + '</span>';
         } else if (jqueryWord.includes(".")) {
@@ -203,8 +209,14 @@ function style_jquery_code(jquery_code) {
 }
 
 // The result for the lesson ##################
-var result = `
-    <p>This is the result</p>
+const result = `<div class="row m-0 p-0">
+<div class="col-12 m-0 p-0 d-flex justify-content-center">
+    <button class="expand-button" id="button">Expand</button>
+</div>
+<div class="col-12 m-0 p-0 d-flex justify-content-center">
+    <p class="button-text m-0">Hidden Information!</p>
+</div>
+</div>
 `;
 
 function home_slide(languages, title, description, result) {
@@ -215,7 +227,7 @@ function home_slide(languages, title, description, result) {
 }
 
 //  For the home page add the, (languages) (title) (description) (result) #########################
-var home_slide = new home_slide(['html', 'css', 'jquery'], 'Template title', 'This is a test page to speed up development', result)
+var home_slide = new home_slide(['html', 'css', 'jquery'], 'Expand to close', 'A simple way to show and hide a message, also to change the button colour and text.', result)
 
 var lessonLanguages = [];
 
@@ -249,10 +261,10 @@ var homeSlide = `
                                 <h3 class="mt-3">${home_slide.title}</h3>
                             </div>
                             <div class="col-12 m-0 p-0">
-                                <p class="text-secondary ml-3">${home_slide.description}</p>
+                                <p class="text-secondary ml-3 mb-0">${home_slide.description}</p>
                             </div>
                             <div class="col-12 m-0 p-0">
-                                <h6 class="m-0 p-0">Result:</h6>
+                                <h6 class="mb-0 p-0">Result:</h6>
                             </div>
                         </div>
                         <div class="result-container pt-3">
@@ -291,7 +303,7 @@ var homeSlide = `
                     <div class="page-container-mobile">
                         <div class="container-fluid d-flex justify-content-center p-0">
                             <video width="85%" controls autoplay muted loop>
-                                <source src=images/menu-transition/1.mp4 type="video/mp4" autoplay>
+                                <source src=images/expand-close/1.mp4 type="video/mp4" autoplay>
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -419,7 +431,7 @@ function informationSlide(languages) {
                             <!-- Second side (mobile) -->
                             <div class="page-container-mobile">
                                 <div class="container-fluid d-flex justify-content-center p-0">
-                                    <img src="images/menu-transition/2.png" style="width:85%; border: solid black 1px;">
+                                    <img src="images/expand-close/${languages[0]['image']}" style="width:85%; border: solid black 1px;">
                                 </div>
                                 <p class="mt-2 mb-0 text-center">This is being shown as a image, to inspect elements please view on desktop.</p>
                             </div>
@@ -432,45 +444,51 @@ function informationSlide(languages) {
 // Create the slides with the information code. ###################### (* = <br>, ? = &emsp;&emsp;)
 
 // First Page
-var htmlCodeFirstSlide = style_html_element(`
-<div class="container-fluid d-flex justify-content-between mt-2">
-    <select class="form-control mr-2" id="sort-links">
-        <option value="easyHard">Easy to Hard</option>
-        <option value="hardEasy">Hard to Easy</option>
-    </select>
-    <button class="main-button float-right" onclick="filter()">Search</button>
-</div>
-`);
-var cssCodefirstSlide = style_css_properties(`
-.expand-button {
-    background-color: rgb(24, 187, 76);
-    color: white;
-    padding: 5px 10px;
-    border-bottom: solid rgb(21, 152, 63) 4px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Pacifico', cursive;
-}
+var htmlCodeFirstSlide = `
+&lt;<span class="code-tag">button</span><span class="code-attribute"> class</span>="<span class="code-value">expand-button</span>"<span class="code-attribute"> id</span>="<span class="code-value">button</span>"&gt;Expand&lt;<span class="code-tag">/button</span>&gt;<br>&lt;<span class="code-tag">p</span><span class="code-attribute"> class</span>="<span class="code-value">button-text</span>"&gt;Hidden Information!&lt;<span class="code-tag">/p</span>&gt;
+`;
+var cssCodefirstSlide = `
+<span class="code-target">
+button:focus</span> {
+<br><span class="code-property">&emsp;&emsp;outline:</span><span class="code-value"> none;
+</span><br>}<br><span class="code-target">
 
-.button-close {
-    background-color: red;
-    border-bottom: solid rgb(162, 14, 14) 4px;
-}
+.expand-button</span> {
+<br><span class="code-property">&emsp;&emsp;background-color:</span><span class="code-value"> rgb(24,</span><span class="code-value"> 187,</span><span class="code-value"> 76);
+</span><br><span class="code-property">&emsp;&emsp;color:</span><span class="code-value"> white;
+</span><br><span class="code-property">&emsp;&emsp;padding:</span><span class="code-value"> 5px</span><span class="code-value"> 10px;
+</span><br><span class="code-property">&emsp;&emsp;border-bottom:</span><span class="code-value"> solid</span><span class="code-value"> rgb(21,</span><span class="code-value"> 152,</span><span class="code-value"> 63)</span><span class="code-value"> 4px;
+</span><br><span class="code-property">&emsp;&emsp;border-radius:</span><span class="code-value"> 5px;
+</span><br><span class="code-property">&emsp;&emsp;cursor:</span><span class="code-value"> pointer;
+</span><br><span class="code-property">&emsp;&emsp;font-family:</span><span class="code-value"> 'Pacifico',</span><span class="code-value"> cursive;
+</span><br>}<br><span class="code-target">
 
-.hidden-text {
-    display: none;
-}
-`);
-var firstSlide = new informationSlide([{ 'language': 'html', 'code': htmlCodeFirstSlide }, { 'language': 'css', 'code': cssCodefirstSlide }]);
+.button-close</span> {
+<br><span class="code-property">&emsp;&emsp;background-color:</span><span class="code-value"> red;
+</span><br><span class="code-property">&emsp;&emsp;border-bottom:</span><span class="code-value"> solid</span><span class="code-value"> rgb(162,</span><span class="code-value"> 14,</span><span class="code-value"> 14)</span><span class="code-value"> 4px;
+</span><br>}<br><span class="code-target">
+
+.button-text</span> {
+<br><span class="code-property">&emsp;&emsp;display:</span><span class="code-value"> none;
+</span><br>}<br>
+`;
+var firstSlide = new informationSlide([{ 'language': 'html', 'code': htmlCodeFirstSlide, 'image': '2.png' }, { 'language': 'css', 'code': cssCodefirstSlide }]);
 
 // Second Page
-var jqueryCodeSecondSlide = style_jquery_code(`
-$('body').on('click', '.expand-button', function() {
-    $(this).toggleClass('button-close');
-    $(this).next('p').toggle();
-});
-`);
-var secondSlide = new informationSlide([{ 'language': 'jquery', 'code': jqueryCodeSecondSlide }, { 'language': 'Notes:', 'code': '.toggleClass() is used to toggle the CSS class called "button-close"<br> .next() will find the next p element under .expand-button' }]);
+var jqueryCodeSecondSlide = `
+<span class="code-value">
+$</span>(<span class="code-css-value">'</span><span class="code-css-value">.expand-button'</span>)<span class="code-value">.on</span>(<span class="code-css-value">'click',</span><span class="code-property">function</span>() {
+<br>&emsp;&emsp;<span class="code-value">&emsp;&emsp;$</span>(<span class="code-property">this</span>)<span class="code-value">.toggleClass</span>(<span class="code-css-value">'button-close'</span>);
+<br>&emsp;&emsp;<span class="code-property">&emsp;&emsp;var </span><span class="variable-colour">targetElement</span> = <span class="code-css-value">'</span><span class="code-css-value">.'</span><span class="code-value">.concat</span>(<span class="code-property">this</span><span class="code-value">.id,</span><span class="code-css-value">'-text'</span>);
+<br>&emsp;&emsp;<span class="code-value">&emsp;&emsp;$</span>(<span class="variable-colour">targetElement</span>)<span class="code-value">.toggle</span>();
+<br>&emsp;&emsp;<span class="colour-python">&emsp;&emsp;if&emsp;</span>(<span class="code-value">$</span>(<span class="code-property">this</span>)<span class="code-value">.text</span>() == <span class="code-css-value">'Expand'</span>) {
+<br>&emsp;&emsp;<span class="code-value">&emsp;&emsp;&emsp;&emsp;$</span>(<span class="code-property">this</span>)<span class="code-value">.text</span>(<span class="code-css-value">'Close'</span>);
+<br>&emsp;&emsp;&emsp;&emsp;}<span class="colour-python">&emsp;else</span> {
+<br>&emsp;&emsp;<span class="code-value">&emsp;&emsp;&emsp;&emsp;$</span>(<span class="code-property">this</span>)<span class="code-value">.text</span>(<span class="code-css-value">'Expand'</span>);
+<br>&emsp;&emsp;&emsp;&emsp;}
+<br>});<br>&emsp;&emsp;
+`;
+var secondSlide = new informationSlide([{ 'language': 'jquery', 'code': jqueryCodeSecondSlide, 'image': '3.png' }, { 'language': 'Notes:', 'code': '"this" will just mean the element that has been clicked on, which has the class of ".expand-button" and the id of this element is "button", putting ".".concat(this.id,"-text") this returns ".button-text" we are storing this value inside of a variable called "targetElement" and using Jquery to find the element with this class. Finally, we toggle the view of this element using .toggle() which if you take a look at the html elements you will find the p element with this class. By using "this" you dont have to change the javascript file and only have to change the names of the id and class for your chosen elements.' }]);
 
 // Each slide
 var totalSlides = [firstSlide, secondSlide]

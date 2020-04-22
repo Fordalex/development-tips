@@ -11,9 +11,7 @@ h1 {
     margin-right: auto;
     margin-top: 25px;
     position: relative;
-    padding: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0px 8px;
     width: 500px;
     height: 500px;
     background-color: rgb(255, 255, 255);
@@ -45,13 +43,30 @@ h1 {
     justify-content: center;
     align-items: center;
     padding: 11px;
-    width: 94%;
+    width: 96.9%;
     height: 210px;
     position: absolute;
     bottom: 70px;
     border: solid white 1px;
     border-radius: 5px;
     box-shadow: 0 1px 3px 0 rgba(98, 152, 167, 0.12), 0 11px 40px 0 rgba(25, 62, 72, 0.09);
+}
+
+
+/* coding sections */
+
+.code-section-label {
+    margin: 0;
+    padding: 1px 4px;
+    position: relative;
+    top: 10px;
+    left: 12px;
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    border: solid black 1px;
+    width: auto;
+    display: inline-block;
 }
 
 
@@ -70,8 +85,8 @@ h1 {
 
 footer {
     position: absolute;
-    width: 94%;
-    bottom: 10px;
+    width: 95%;
+    bottom: 5px;
 }
 
 

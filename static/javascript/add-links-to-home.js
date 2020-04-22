@@ -23,12 +23,14 @@ var scrollDownAnimation = `
                         </div>
 `;
 
-const extendClose = `<div class="row m-0 p-0">
-                        <div style="width:145px; height:50px;">
-                            <a class="expand-button text-dark text-center d-block">Expand</a>
-                            <p class="hidden-text m-0">Hidden Information!</p>
+const expandClose = `<div class="row m-0 p-0">
+                        <div class="col-12 m-0 p-0 d-flex justify-content-center">
+                            <button class="expand-button" id="button">Expand</button>
                         </div>
-</div>
+                        <div class="col-12 m-0 p-0 d-flex justify-content-center">
+                            <p class="button-text m-0">Hidden Information!</p>
+                        </div>
+                    </div>
 `;
 
 // Creating the link objects
@@ -44,13 +46,14 @@ function link(title, languages, difficulty, preview, link, created) {
 var animate_a_gradient = new link('Animate a gradient', ['html', 'css'], 1, animateAGradientPreview, 'animate-a-gradient.html', '04/04/2020');
 var menu_transition = new link('Menu transition', ['html', 'css', 'jquery'], 1.5, menuTransitionPreview, 'menu-transition.html', '11/04/2020');
 var scroll_down_animation = new link('Scroll down animation', ['html', 'css'], 1, scrollDownAnimation, 'scroll-down-animation.html', '12/04/2020');
-var extend_close = new link('Extend to close transition', ['html', 'css', 'jquery'], 1.5, extendClose, 'coming-soon.html', '17/04/2020');
+var expand_close = new link('Expand to close', ['html', 'css', 'jquery'], 1.5, expandClose, 'expand-close.html', '21/04/2020');
+
 
 // All the links stored in an array
-var allLinks = [animate_a_gradient, menu_transition, scroll_down_animation, extend_close];
+var allLinks = [animate_a_gradient, menu_transition, scroll_down_animation, expand_close];
 
-// formats the links ready to be appended to the home page
-function appendLinkToPage(linkTitle, linkLanguages, linkDifficulty, linkPreview, link, linkCreated) {
+// styles the links ready to be appended to the home page
+function appendLinkToPage(theLink) {
     // styling the languages list
     var languagesArray = [];
     var html = '<span class="colour-html"><b>HTML</b></span>';
@@ -59,40 +62,40 @@ function appendLinkToPage(linkTitle, linkLanguages, linkDifficulty, linkPreview,
     var jquery = '<span class="colour-jquery"><b>Jquery</b></span>';
     var python = '<span class="colour-css"><b>CSS</b></span>';
 
-    if (linkLanguages.includes("html") == true) {
+    if (theLink['languages'].includes("html") == true) {
         languagesArray.push(html)
     };
 
-    if (linkLanguages.includes("css") == true) {
+    if (theLink['languages'].includes("css") == true) {
         languagesArray.push(css)
     };
 
-    if (linkLanguages.includes("javascript") == true) {
+    if (theLink['languages'].includes("javascript") == true) {
         languagesArray.push(javascript)
     };
 
-    if (linkLanguages.includes("jquery") == true) {
+    if (theLink['languages'].includes("jquery") == true) {
         languagesArray.push(jquery)
     };
 
-    if (linkLanguages.includes("python") == true) {
+    if (theLink['languages'].includes("python") == true) {
         languagesArray.push(python)
     };
 
     // creating the stars out of the difficulty rating
-    var difficulty = [];
-    if (linkDifficulty % 1 == 0) {
-        for (let i = 0; i < linkDifficulty; i++) {
+    var difficulty = '';
+    if (theLink['difficulty'] % 1 == 0) {
+        for (let i = 0; i < theLink['difficulty']; i++) {
             difficulty = difficulty + '<i class="fas fa-star"></i>'
         }
     } else {
-        for (let i = 0; i < linkDifficulty - 0.5; i++) {
+        for (let i = 0; i < theLink['difficulty'] - 0.5; i++) {
             difficulty = difficulty + '<i class="fas fa-star"></i>'
         }
         difficulty = difficulty + '<i class="fas fa-star-half-alt"></i>'
     };
     // adding the empty stars
-    var remainingStars = 5 - linkDifficulty;
+    var remainingStars = 5 - theLink['difficulty'];
     if (remainingStars % 1 == 0) {
         for (let i = 0; i < remainingStars; i++) {
             difficulty = difficulty + '<i class="far fa-star"></i>'
@@ -106,22 +109,22 @@ function appendLinkToPage(linkTitle, linkLanguages, linkDifficulty, linkPreview,
     var table = `<div class="col-12 col-sm-6 col-md-4 col-lg-3 px-0 py-2 p-sm-2 link">
                     <div class="tip-link-container">
                         <div class="white-background p-2">
-                            <h5 class="m-0">${linkTitle}</h5>
+                            <h5 class="m-0">${theLink['title']}</h5>
                         </div>
                         <div class="p-2">
                             <div class="d-flex justify-content-between">
-                                <p class="text-secondary text-small p-0 m-0 mb-1">Languages: ${languagesArray}</p>
+                                <p class="text-secondary text-small p-0 m-0 mb-1">Languages: ${languagesArray.join('/')}</p>
                                 <div class="d-flex justify-content-start align-items-center mb-1">
                                     <p class="m-0 text-small mr-1">Difficulty:</p>
                                     ${difficulty}
                                 </div>
                             </div>
                             <div class="result-container-preview d-flex justify-content-center align-items-center">
-                                ${linkPreview}
+                                ${theLink['preview']}
                             </div>
                             <div class="d-flex justify-content-between align-items-center mt-2">
-                                <a href="${link}" class="main-button">Learn</a>
-                                <p class="text-secondary text-small p-0 m-0">Created: ${linkCreated}</p>
+                                <a href="${theLink['link']}" class="main-button">Learn</a>
+                                <p class="text-secondary text-small p-0 m-0">Created: ${theLink['created']}</p>
                             </div>
                         </div>
                     </div>
@@ -135,13 +138,8 @@ $(document).ready(function() {
     var sortLinks = allLinks.sort(function(b, a) { return b.difficulty - a.difficulty });
 
     for (let i = 0; i < sortLinks.length; i++) {
-        var title = sortLinks[i]['title'];
-        var languages = sortLinks[i]['languages'];
-        var difficulty = sortLinks[i]['difficulty'];
-        var preview = sortLinks[i]['preview'];
-        var link = sortLinks[i]['link']
-        var created = sortLinks[i]['created'];
-        appendLinkToPage(title, languages, difficulty, preview, link, created)
+        console.log(sortLinks[i])
+        appendLinkToPage(sortLinks[i])
     }
 });
 
@@ -158,13 +156,8 @@ function filter() {
     }
 
     for (let i = 0; i < sortLinks.length; i++) {
-        var title = sortLinks[i]['title'];
-        var languages = sortLinks[i]['languages'];
-        var difficulty = sortLinks[i]['difficulty'];
-        var preview = sortLinks[i]['preview'];
-        var link = sortLinks[i]['link']
-        var created = sortLinks[i]['created'];
-        appendLinkToPage(title, languages, difficulty, preview, link, created)
+        console.log(sortLinks[i])
+        appendLinkToPage(sortLinks[i])
     }
 
 
